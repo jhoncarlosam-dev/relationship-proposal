@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Kate ❤️</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Floating Hearts Background Container -->
+    <div id="hearts-container" class="hearts-container"></div>
+
+    <main class="app-container">
+        <!-- Card 1: The Proposal Card -->
+        <section id="proposal-card" class="glass-card active">
+            <div class="heart-icon-wrapper">
+                <i class="fa-solid fa-heart pulsing-heart"></i>
+            </div>
+            <h1 class="romantic-title">Hola Kate...</h1>
+            <p class="romantic-subtitle">Tengo una pregunta muy importante que hacerte.</p>
+            
+            <h2 class="main-question">¿Quieres ser mi novia?</h2>
+            
+            <div class="buttons-group">
+                <button id="btn-yes" class="btn btn-primary btn-glow">
+                    <span class="btn-content"><i class="fa-solid fa-heart"></i> SÍ</span>
+                </button>
+                <button id="btn-no" class="btn btn-secondary">
+                    <span class="btn-content"><i class="fa-solid fa-xmark"></i> NO</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Card 2: The Success Card (Hidden initially) -->
+        <section id="success-card" class="glass-card hidden">
+            <div class="success-header">
+                <div class="sparkles"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <h1 class="romantic-title script-font">¡Dijiste que SÍ!</h1>
+                <p class="romantic-subtitle">¡El comienzo de nuestra hermosa historia!</p>
+            </div>
+
+            <!-- Polaroid Photo Container -->
+            <div class="polaroid-wrapper">
+                <div class="polaroid">
+                    <img src="couple.png" alt="Kate y Yo" class="couple-photo">
+                    <div class="polaroid-caption">
+                        <span>Kate y Yo ❤️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-message">
+                <p>Sabía que tomarías la decisión correcta. Prepárate para momentos llenos de risas, aventuras y muchísimo amor.</p>
+                <p class="love-you-text">¡Te amo muchísimo! 💕</p>
+            </div>
+            
+            <button id="btn-restart" class="btn btn-text">
+                <i class="fa-solid fa-rotate-left"></i> Ver propuesta de nuevo
+            </button>
+        </section>
+    </main>
+
+    <!-- Modal: Premium Plan Alert -->
+    <div id="premium-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-card">
+            <button id="btn-close-modal" class="modal-close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="lock-icon-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h2>Acción Bloqueada</h2>
+                <p class="modal-desc">Para seleccionar la opción <strong>NO</strong>, necesitas una cuenta Premium.</p>
+            </div>
+
+            <!-- Pricing Comparison -->
+            <div class="pricing-comparison">
+                <!-- Free Plan -->
+                <div class="price-card">
+                    <div class="price-plan-name">Plan Gratis</div>
+                    <div class="price-amount">$0.00<span class="price-period">/mes</span></div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check text-success"></i> Decir SÍ</li>
+                        <li><i class="fa-solid fa-check text-success"></i> Amor Infinito</li>
+                        <li><i class="fa-solid fa-check text-success"></i> Salidas a comer</li>
+                        <li><i class="fa-solid fa-xmark text-danger"></i> Decir NO</li>
+                    </ul>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="price-card premium">
+                    <div class="premium-badge">Recomendado</div>
+                    <div class="price-plan-name">Novios Premium Pro</div>
+                    <div class="price-amount">$9,999.99<span class="price-period">/mes</span></div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check text-success"></i> Decir NO <span class="unlocked-text">(Desbloqueado)</span></li>
+                        <li><i class="fa-solid fa-xmark text-danger"></i> Soledad Extrema</li>
+                        <li><i class="fa-solid fa-xmark text-danger"></i> Cero Abrazos</li>
+                        <li><i class="fa-solid fa-xmark text-danger"></i> Arrepentimiento Diario</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn-pay-premium" class="btn btn-primary btn-glow full-width">
+                    <i class="fa-solid fa-credit-card"></i> Pagar Plan Premium ($9,999.99/mes)
+                </button>
+                <button id="btn-back-to-yes" class="btn btn-secondary full-width">
+                    Volver y elegir SÍ (Gratis)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
